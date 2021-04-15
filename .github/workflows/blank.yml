@@ -10,10 +10,22 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest,windows-latest, macOS-latest]
 
     steps:
       - uses: actions/checkout@v2
+      
+   
+      - name: Installing npm
+        run: brew install node
+
+        
+      - name: Installing nbdime
+        run: pip install nbdime
+ 
 
       - name: Comparations A and B
         run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
