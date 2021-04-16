@@ -31,8 +31,11 @@ jobs:
         
       - name: Installing nbdime
         run: pip3 install nbdime
- 
+        
+      - name: git integration
+        run: nbdime config-git --enable --global
 
+ 
       - name: Comparations A and B
         #run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
         run: nbdiff client branch sample-report-gh.ipynb sample-report-gh.ipynb  
