@@ -16,16 +16,24 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
+      - name: Fetch target branch
+        run: git fetch origin ${{ github.event.pull_request.base.ref }}:${{ github.event.pull_request.base.ref }}
+      
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.6"
+      
    
-      - name: Installing npm
-        run: brew install node
+      #- name: Installing npm
+       # run: brew install node
 
         
       - name: Installing nbdime
-        run: pip install nbdime
+        run: pip3 install nbdime
  
 
-      - name: Comparations A and B
-        run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
+      #- name: Comparations A and B
+       # run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
 
   
