@@ -33,7 +33,7 @@ jobs:
         run: pip3 install nbdime
  
 
-      #- name: Comparations A and B
-       # run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
+      - name: Comparations A and B
+        run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
 
   
