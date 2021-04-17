@@ -39,7 +39,9 @@ jobs:
       - name: Comparations A and B
         #run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
         #run: nbdiff client branch sample-report-gh.ipynb sample-report-gh.ipynb  
-        run: git difftool HEAD
+        #run: git difftool HEAD
+        run: nbdiff-web client branch HEAD
+
 
 
   
