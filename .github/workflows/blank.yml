@@ -4,7 +4,7 @@ name: Model Client
 on:
   pull_request:
   
-    branches: [ Client ]
+    branches: [ client ]
 
   workflow_dispatch:
 
@@ -34,9 +34,12 @@ jobs:
         
       - name: git integration
         run: nbdime config-git --enable --global
+        
+      - name: navigate upwards
+        run: cd ..
 
  
-      - name: Comparations A and B
+      - name: Comparison A and B
         #run: nbdiff-web client branch sample-report-gh.ipynb sample-report-gh.ipynb  
         #run: nbdiff client branch sample-report-gh.ipynb sample-report-gh.ipynb  
         #run: git difftool HEAD
